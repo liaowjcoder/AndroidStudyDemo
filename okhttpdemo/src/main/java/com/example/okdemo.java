@@ -11,6 +11,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 缓存相关的demo
+ */
 public class okdemo {
 
     public static void main(String[] args) {

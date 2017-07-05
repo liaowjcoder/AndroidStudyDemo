@@ -20,6 +20,7 @@ public class OkDemo2 {
 
 
         Request request = new Request.Builder()
+//                .url("http://www.jianshu.com/search?q=handler内存泄露&page=1&type=note")
                 .url("http://www.qq.com")
                 .build();
 

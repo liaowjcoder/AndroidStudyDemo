@@ -12,7 +12,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * 缓存相关的demo
+ * 缓存相关的demo http://www.jianshu.com/p/8d0bc05104ef
  */
 public class okdemo {
 

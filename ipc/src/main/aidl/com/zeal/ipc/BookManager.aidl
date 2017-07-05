@@ -5,7 +5,7 @@ package com.zeal.ipc;
 import com.zeal.ipc.Book;
 
 interface BookManager {
-    List<Book> getBookList();
+    ArrayList<Book> getBookList();
 
     void addBook(Book book);
 }

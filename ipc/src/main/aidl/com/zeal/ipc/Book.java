@@ -1,4 +1,4 @@
-package com.zeal.ipc5;
+package com.zeal.ipc;
 
 import android.os.Parcel;
 import android.os.Parcelable;

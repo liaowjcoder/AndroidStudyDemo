@@ -7,7 +7,7 @@
         android:allowBackup="true" android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true" android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.ipc3.MainActivity">
+        <activity android:name="com.zeal.ipc6.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -15,7 +15,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.zeal.ipc3.Main2Activity" android:process=":remote"/>
+        <activity android:name="com.zeal.ipc6.Main2Activity" android:process=":remote"/>
         <activity android:name="com.zeal.ipc3.Main3Activity" android:process="com.zeal.ipc.remote"/>
 
     </application>

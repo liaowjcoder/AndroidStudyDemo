@@ -1,1 +1,1 @@
-include ':app', ':okhttpdemo', ':threaddemo'
+include ':app', ':okhttpdemo', ':threaddemo', ':ipc'

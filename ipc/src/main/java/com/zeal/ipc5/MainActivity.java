@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 //这里可能会造成线程阻塞
                 Log.e("zeal", mBookManager.getBookList().toString());
+                //ArrayList 虽然服务端发送的数据类型是CopyOnWriteArrayList但是Binder都会将其转化为ArrayList类型给客户端
                 Log.e("zeal", mBookManager.getBookList().getClass().getSimpleName());
 
 

@@ -1,5 +1,5 @@
-// Book2.aidl
-package com.zeal.ipc;
+// IBook.aidl
+package com.zeal.ipc5;
 
 // Declare any non-default types here with import statements
 

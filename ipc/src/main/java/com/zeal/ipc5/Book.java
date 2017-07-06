@@ -1,4 +1,4 @@
-package com.zeal.ipc;
+package com.zeal.ipc5;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -19,7 +19,7 @@ public class Book implements Parcelable {
     protected Book(Parcel in) {
 
         bookid = in.readInt();
-        bookname= in.readString();
+        bookname = in.readString();
     }
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {
@@ -43,5 +43,13 @@ public class Book implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(bookid);
         dest.writeString(bookname);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookid=" + bookid +
+                ", bookname='" + bookname + '\'' +
+                '}';
     }
 }

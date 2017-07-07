@@ -2,8 +2,10 @@ package com.zeal.ipc10;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.Parcel;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
@@ -32,6 +34,40 @@ public class BookManagerService extends Service {
     }
 
     private Binder binder = new IBookManager.Stub() {
+
+        //校验客户端调用的合法性
+
+
+        @Override
+        public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+
+            //校验是否注册了该服务
+
+            int check = checkCallingOrSelfPermission("com.zeal.ipc.permission.ACCESS_BOOK_SERVICE");
+            Log.e("zeal", "onTransact：" + (check != PackageManager.PERMISSION_DENIED));
+            if (check == PackageManager.PERMISSION_DENIED) {
+                return false;
+            }
+            //校验包名
+            String packageName = null;
+            //根据 uid 获取所有的 package
+            //Linux uid uid可以用于权限校验工作
+            //packages一般都会返回一个数据，如果多个数据的原因是多个多个包通过shareid共享一个 user id
+            String[] packages = getPackageManager().getPackagesForUid(getCallingUid());
+
+            if (packages != null && packages.length > 0) {
+                packageName = packages[0];
+
+                if (!packageName.startsWith("com.zeal")) {
+                    return false;
+                }
+            }
+            Log.e("zeal", "onTransact packageName：" + packageName);//com.zeal.ipc
+
+
+            return super.onTransact(code, data, reply, flags);
+        }
+
         @Override
         public void addBook(Book book) throws RemoteException {
             mBookList.add(book);
@@ -46,15 +82,15 @@ public class BookManagerService extends Service {
         @Override
         public void registerNewBookListener(IOnNewBookArrivedListener listener) {
             mRemoteCallList.register(listener);
-            Log.e("zeal","REGISTER:"+listener);
-            Log.e("zeal","AFTER REGISTER:"+mRemoteCallList.getRegisteredCallbackCount());
+            Log.e("zeal", "REGISTER:" + listener);
+            Log.e("zeal", "AFTER REGISTER:" + mRemoteCallList.getRegisteredCallbackCount());
         }
 
         //反注册
         public void unregisterNewBookListener(IOnNewBookArrivedListener listener) {
             mRemoteCallList.unregister(listener);
-            Log.e("zeal","UNREGISTER:"+listener);
-            Log.e("zeal","AFTER UNREGISTER:"+mRemoteCallList.getRegisteredCallbackCount());
+            Log.e("zeal", "UNREGISTER:" + listener);
+            Log.e("zeal", "AFTER UNREGISTER:" + mRemoteCallList.getRegisteredCallbackCount());
         }
     };
 

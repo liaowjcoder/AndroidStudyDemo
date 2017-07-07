@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zeal.ipc">
 
+    <uses-permission android:name="com.zeal.ipc.permission.ACCESS_BOOK_SERVICE" />
     <application
         android:name="com.zeal.ipc3.MyApplication"
         android:allowBackup="true"
@@ -26,13 +27,29 @@
             android:process="com.zeal.ipc.remote" />
 
         <!--远程服务-->
-        <service android:name="com.zeal.ipc8.MessengerService"
-            android:process=":remote"
-            />
+        <service
+            android:name="com.zeal.ipc8.MessengerService"
+            android:process=":remote" />
         <!--远程服务-->
-        <service android:name="com.zeal.ipc10.BookManagerService"
-            android:process=":remote"
-            />
-    </application>
+        <service
+            android:name="com.zeal.ipc10.BookManagerService"
+            android:process=":remote" />
 
+
+    </application>
+    <!--定义一个权限
+    android:description :对权限的描述，一般是两句话，第一句话描述这个权限所针对的操作，第二句话告诉用户授予app这个权限会带来的后果
+    android:label: 对权限的一个简短描述
+    android:name :权限的唯一标识，一般都是使用 报名加权限名
+    android:permissionGroup: 权限所属权限组的名称
+    android:protectionLevel: 权限的等级，
+    normal 是最低的等级，声明次权限的app，系统会默认授予次权限，不会提示用户
+    dangerous  权限对应的操作有安全风险，系统在安装声明此类权限的app时会提示用户
+    signature  权限表明的操作只针对使用同一个证书签名的app开放
+    signatureOrSystem  与signature类似，只是增加了rom中自带的app的声明
+    -->
+    <permission
+        android:label="对权限的一个简短描述"
+        android:name="com.zeal.ipc.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
 </manifest>

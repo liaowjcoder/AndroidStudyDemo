@@ -58,6 +58,7 @@ public class BookManagerService extends Service {
         //反注册
         public void unregisterNewBookListener(IOnNewBookArrivedListener listener) {
             if (listener != null) {
+
                 if (mListenerList.contains(listener)) {
                     mListenerList.remove(listener);
                 } else {

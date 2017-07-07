@@ -32,6 +32,10 @@ import com.zeal.ipc.R;
  *      方式1：onServiceDisconnected：主线程 main
  *      方式2：binderDied 线程池
  *
+ * 权限校验：
+ *      1.onBind校验
+ *      2.onTransact校验
+ *
  */
 
 public class MainActivity extends AppCompatActivity {

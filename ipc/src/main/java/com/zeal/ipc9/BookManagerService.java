@@ -48,18 +48,21 @@ public class BookManagerService extends Service {
                     mListenerList.add(listener);
                 } else {
                     Log.e("zeal", "register already exist");
+                    return;
                 }
 
                 Log.e("zeal", "register listener success" + listener.toString());
             }
         }
+
         //反注册
         public void unregisterNewBookListener(IOnNewBookArrivedListener listener) {
             if (listener != null) {
-                if (!mListenerList.contains(listener)) {
+                if (mListenerList.contains(listener)) {
                     mListenerList.remove(listener);
                 } else {
-                    Log.e("zeal", "unregister fail ," + listener.toString() + "no already exist");
+                    Log.e("zeal", "unregister fail ," + listener.toString() + " no exist");
+                    return;
                 }
                 Log.e("zeal", "unregisterNewBookListener success " + listener.toString());
             }
@@ -78,30 +81,32 @@ public class BookManagerService extends Service {
     }
 
 
-
-
-
-
     private class ServiceWork implements Runnable {
 
         @Override
         public void run() {
-            //检测服务是否已经销毁
-            if (mIsServiceDestroyed.get()) {
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                int id = mBookList.size() + 1;
-                Book book = new Book(id, "new Book#" + id);
 
-                try {
-                    onNewBookArrive(book);
-                } catch (RemoteException e) {
-                    e.printStackTrace();
+            while (true) {
+                if (!mIsServiceDestroyed.get()) { //检测服务是否已经销毁
+                    try {
+                        Thread.sleep(4000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    int id = mBookList.size() + 1;
+                    Book book = new Book(id, "new Book#" + id);
+                    //添加一本书
+                    try {
+                        IBookManager.Stub.asInterface(binder).addBook(book);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        onNewBookArrive(book);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                 }
-
             }
         }
     }

@@ -18,6 +18,17 @@ import com.zeal.ipc.R;
 
 /**
  * Created by liaowj on 2017/7/6.
+ *
+ * 注册：register listener success com.zeal.ipc9.IOnNewBookArrivedListener$Stub$Proxy@141e334a
+ * 解除注册：unregister fail com.zeal.ipc9.IOnNewBookArrivedListener$Stub$Proxy@7eda3d8 no exist
+ *
+ * 可以发现：客户端传递过来的 listener 并不一样，但是检查了客户注册和解除注册使用的 listener 是同一个的，但是
+ * 为什么在服务端却得到不一样的对象值呢？
+ *
+ * 原因：对象的传输本质就是序列化和反序列化的过程，这也是想要在进程间通讯的对象必须要实现 Parcelable 的原因。
+ * 对象想要在进程间通讯，必须依赖于 Binder ，Binder 会对每一个需要进行传递的对象都做了处理。
+ *
+ * 解决方案就是使用 RemoteCallbackList 来保存进程间通讯的接口。
  */
 
 public class MainActivity extends AppCompatActivity {

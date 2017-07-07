@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.ipc10.MainActivity">
+        <activity android:name="com.zeal.ipc11.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,6 +35,19 @@
             android:name="com.zeal.ipc10.BookManagerService"
             android:process=":remote" />
 
+        <!--注册内容提供者
+        1.authorities 唯一标识
+        2.name 内容提供者的名称
+        3.permission 权限名称
+        4.process 开启其他进程
+        5.readPermission
+        6.writePermission
+        -->
+        <provider
+            android:name="com.zeal.ipc11.BookContentProvider"
+            android:authorities="com.zeal.ipc11.provider"
+            android:permission="com.zeal.ipc.Provider"
+            android:process=":remote" />
 
     </application>
     <!--定义一个权限
@@ -49,7 +62,7 @@
     signatureOrSystem  与signature类似，只是增加了rom中自带的app的声明
     -->
     <permission
-        android:label="对权限的一个简短描述"
         android:name="com.zeal.ipc.permission.ACCESS_BOOK_SERVICE"
+        android:label="对权限的一个简短描述"
         android:protectionLevel="normal" />
 </manifest>

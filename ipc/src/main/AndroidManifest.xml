@@ -3,54 +3,8 @@
     package="com.zeal.ipc">
 
     <uses-permission android:name="com.zeal.ipc.permission.ACCESS_BOOK_SERVICE" />
-    <application
-        android:name="com.zeal.ipc3.MyApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.ipc11.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.zeal.ipc6.Main2Activity"
-            android:process=":remote" />
-        <activity
-            android:name="com.zeal.ipc3.Main3Activity"
-            android:process="com.zeal.ipc.remote" />
-
-        <!--远程服务-->
-        <service
-            android:name="com.zeal.ipc8.MessengerService"
-            android:process=":remote" />
-        <!--远程服务-->
-        <service
-            android:name="com.zeal.ipc10.BookManagerService"
-            android:process=":remote" />
-
-        <!--注册内容提供者
-        1.authorities 唯一标识
-        2.name 内容提供者的名称
-        3.permission 权限名称
-        4.process 开启其他进程
-        5.readPermission
-        6.writePermission
-        -->
-        <provider
-            android:name="com.zeal.ipc11.BookContentProvider"
-            android:authorities="com.zeal.ipc11.provider"
-            android:permission="com.zeal.ipc.Provider"
-            android:process=":remote" />
-
-    </application>
-    <!--定义一个权限
+    <!--
+    定义一个权限
     android:description :对权限的描述，一般是两句话，第一句话描述这个权限所针对的操作，第二句话告诉用户授予app这个权限会带来的后果
     android:label: 对权限的一个简短描述
     android:name :权限的唯一标识，一般都是使用 报名加权限名
@@ -65,4 +19,58 @@
         android:name="com.zeal.ipc.permission.ACCESS_BOOK_SERVICE"
         android:label="对权限的一个简短描述"
         android:protectionLevel="normal" />
+
+    <application
+        android:name="com.zeal.ipc3.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.zeal.ipc12.ProviderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zeal.ipc6.Main2Activity"
+            android:process=":remote" />
+        <activity
+            android:name="com.zeal.ipc3.Main3Activity"
+            android:process="com.zeal.ipc.remote" />
+
+        <!-- 远程服务 -->
+        <service
+            android:name="com.zeal.ipc8.MessengerService"
+            android:process=":remote" />
+        <!-- 远程服务 -->
+        <service
+            android:name="com.zeal.ipc10.BookManagerService"
+            android:process=":remote" />
+
+        <!--
+        注册内容提供者
+        1.authorities 唯一标识
+        2.name 内容提供者的名称
+        3.permission 权限名称
+        4.process 开启其他进程
+        5.readPermission
+        6.writePermission
+        -->
+        <provider
+            android:name="com.zeal.ipc11.BookContentProvider"
+            android:authorities="com.zeal.ipc11.provider"
+            android:permission="com.zeal.ipc.Provider"
+            android:process=":remote" />
+        <provider
+            android:name="com.zeal.ipc12.BookContentProvider"
+            android:authorities="com.zeal.ipc12.provider"
+            android:permission="com.zeal.ipc.Provider"
+            android:process=":remote" />
+
+    </application>
+
 </manifest>

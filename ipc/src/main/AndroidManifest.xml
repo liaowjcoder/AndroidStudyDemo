@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zeal.ipc">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.zeal.ipc.permission.ACCESS_BOOK_SERVICE" />
     <!--
     定义一个权限
@@ -71,6 +73,10 @@
             android:permission="com.zeal.ipc.Provider"
             android:process=":remote" />
 
+        <service
+            android:name="com.zeal.ipc13.TCPServerService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

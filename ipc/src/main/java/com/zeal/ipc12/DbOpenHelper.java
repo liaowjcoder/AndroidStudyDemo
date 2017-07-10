@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  *
  * BookProvider 图书的内容提供者，底层通过该数据库对外界暴露数据
  *
- * Uri 一一对应哪个 UriCode 有了 UriCode 就可以找到需要操作哪张数据表。
+ * Uri 一一对应 UriCode 有了 UriCode 就可以找到需要操作哪张数据表。
  *
  *
  *

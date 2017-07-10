@@ -14,6 +14,17 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by liaowj on 2017/7/10.
+ *
+ *
+ * 1.BinderPool 负责与远程服务建立连接，并且提供 queryBinder 方法由外界调用，
+ * 根据外界提供的 binderCode 去调用远程服务中的 queryBinder 的方法得到真正
+ * 需要调用的 Binder 对象（例如 ISecurityCenter/ICompute）。
+ *
+ * 2.BinderPool 远程服务 IBinderPool 提供了 DeathRecipient 失败重连机制。
+ *
+ * 3.BinderPoolImpl 就是 BinderPool 远程服务的返回的 Binder 对象。真正需要
+ * 查询 Binder 的操作都会在这里实现。
+ *
  */
 
 public class BinderPool {
@@ -62,21 +73,21 @@ public class BinderPool {
         public void onServiceConnected(ComponentName name, IBinder service) {
             mBinderPool = IBinderPool.Stub.asInterface(service);
 
-//            try {
-//                mBinderPool.asBinder().linkToDeath(new IBinder.DeathRecipient() {
-//                    @Override
-//                    public void binderDied() {
-//                        Log.e("zeal", "binder is die");
-//                        mBinderPool.asBinder().unlinkToDeath(this, 0);
-//
-//                        mBinderPool = null;
-//                        //重新连接
-//                        connectBinderPoolService();
-//                    }
-//                }, 0);
-//            } catch (RemoteException e) {
-//                e.printStackTrace();
-//            }
+            try {
+                mBinderPool.asBinder().linkToDeath(new IBinder.DeathRecipient() {
+                    @Override
+                    public void binderDied() {
+                        Log.e("zeal", "binder is die");
+                        mBinderPool.asBinder().unlinkToDeath(this, 0);
+
+                        mBinderPool = null;
+                        //重新连接
+                        connectBinderPoolService();
+                    }
+                }, 0);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
 
             mCountDownLatch.countDown();
 

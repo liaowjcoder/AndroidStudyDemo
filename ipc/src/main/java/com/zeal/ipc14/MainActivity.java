@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //CountDownLatch 将 bindService操作由异步操作转化为同步操作，这就意味着
+        //这个过程是耗时的，不应该在主线程中执行。
         new Thread() {
             @Override
             public void run() {

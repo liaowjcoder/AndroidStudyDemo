@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.zeal.ipc.permission.ACCESS_BOOK_SERVICE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--
     定义一个权限
     android:description :对权限的描述，一般是两句话，第一句话描述这个权限所针对的操作，第二句话告诉用户授予app这个权限会带来的后果
@@ -30,7 +32,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.ipc12.ProviderActivity">
+        <activity android:name="com.zeal.ipc14.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,6 +53,14 @@
         <!-- 远程服务 -->
         <service
             android:name="com.zeal.ipc10.BookManagerService"
+            android:process=":remote" />
+        <!-- 远程服务 -->
+        <service
+            android:name="com.zeal.ipc13.TCPServerService"
+            android:process=":remote" />
+        <!-- 远程服务 -->
+        <service
+            android:name="com.zeal.ipc14.RemoteService"
             android:process=":remote" />
 
         <!--

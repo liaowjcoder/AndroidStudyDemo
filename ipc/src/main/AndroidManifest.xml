@@ -30,7 +30,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.ipc13.ClientActivity">
+        <activity android:name="com.zeal.ipc14.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,6 +55,10 @@
         <!-- 远程服务 -->
         <service
             android:name="com.zeal.ipc13.TCPServerService"
+            android:process=":remote" />
+        <!-- 远程服务 -->
+        <service
+            android:name="com.zeal.ipc14.RemoteService"
             android:process=":remote" />
 
         <!--

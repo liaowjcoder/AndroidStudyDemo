@@ -32,7 +32,7 @@ public class BookManagerService extends Service {
     public IBinder onBind(Intent intent) {
         return binder;
     }
-
+    //在 server 端创建一个 Binder 对象。
     private Binder binder = new IBookManager.Stub() {
 
         //校验客户端调用的合法性

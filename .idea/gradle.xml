@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/annotationandreflect" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/ipc" />
             <option value="$PROJECT_DIR$/okhttpdemo" />

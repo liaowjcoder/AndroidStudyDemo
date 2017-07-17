@@ -32,7 +32,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.ipc14.MainActivity">
+        <activity android:name="com.zeal.ipc12.ProviderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -18,6 +18,7 @@ import java.lang.annotation.RetentionPolicy;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imageview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int LENGTH_SHORT = 1;
     public static final int LENGTH_LONG = 2;
+
+    //表示返回值必须要是 Durations 中指定的 @IntDef 中限制的值
+    @Durations
+    public int getValue(int value) {
+
+//        return 0;
+        return LENGTH_SHORT;
+    }
 
 
 }

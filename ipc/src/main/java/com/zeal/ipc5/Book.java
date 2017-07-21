@@ -22,6 +22,7 @@ public class Book implements Parcelable {
         bookname = in.readString();
     }
 
+    //读的操作
     public static final Creator<Book> CREATOR = new Creator<Book>() {
         @Override
         public Book createFromParcel(Parcel in) {
@@ -39,6 +40,7 @@ public class Book implements Parcelable {
         return 0;
     }
 
+    //写的操作
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(bookid);

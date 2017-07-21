@@ -18,7 +18,7 @@ import android.support.v7.app.AppCompatActivity;
  *
  *  客户端：
  *      定义 Handler 和 Messenger
- *      将客户端发送给服务端的 message.replyTo = 客户端创建的 Messenger （这样服务端就可以那这个 Messenger 发送数据给客户端了）
+ *      将客户端发送给服务端的 message.replyTo = 客户端创建的 Messenger （这样服务端就可以拿这个 Messenger 发送数据给客户端了）
  *
  */
 

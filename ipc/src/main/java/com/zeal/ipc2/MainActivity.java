@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.zeal.ipc.R;
 
 /*
-在过个进程间观察 UserManager 中的 sUserId 的值是否能共享
+在进程间观察 UserManager 中的 sUserId 的值是否能共享
 
 每一个进程都一个虚拟机，每一个虚拟机都会有不同的内存空间，因此在读取 UserManager
 这个对象时就产生不同的副本。

@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             //根据服务端传来的 IBinder 对象创建一个 Messenger
             mServiceMessenger = new Messenger(service);
+
 
             //当服务建立连接之后就发送数据给服务端
             Message msg = Message.obtain();

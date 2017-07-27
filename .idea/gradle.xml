@@ -10,10 +10,13 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/annotationandreflect" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/broadcastreceivermodule" />
             <option value="$PROJECT_DIR$/imagemodule" />
             <option value="$PROJECT_DIR$/ipc" />
+            <option value="$PROJECT_DIR$/javase_collection" />
             <option value="$PROJECT_DIR$/okhttpdemo" />
             <option value="$PROJECT_DIR$/threaddemo" />
+            <option value="$PROJECT_DIR$/webviewmodule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

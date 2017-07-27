@@ -1,1 +1,1 @@
-include ':app', ':okhttpdemo', ':threaddemo', ':ipc', ':annotationandreflect', ':imagemodule'
+include ':app', ':okhttpdemo', ':threaddemo', ':ipc', ':annotationandreflect', ':imagemodule', ':webviewmodule', ':broadcastreceivermodule', ':javase_collection'

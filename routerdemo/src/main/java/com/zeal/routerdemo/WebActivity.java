@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
@@ -22,7 +21,9 @@ public class WebActivity extends AppCompatActivity {
 
 
         WebView webView = (WebView) findViewById(R.id.webview);
-        webView.setWebViewClient(new WebViewClient());
+        //这句话不能加上去，因为会导致跳转出现scheme错误问题
+        //webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(getIntent().getStringExtra("url"));
+
     }
 }

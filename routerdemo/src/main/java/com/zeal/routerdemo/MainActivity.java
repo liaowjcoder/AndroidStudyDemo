@@ -13,11 +13,16 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static MainActivity activity;
+
+    public static MainActivity getThis(){
+        return activity;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        activity = this;
         //跳转到第SecondActivity
         findViewById(R.id.click2SecondAct).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +92,15 @@ public class MainActivity extends AppCompatActivity {
 
                 ARouter.getInstance().build("/test/webactivity")
                         .withString("url","http://www.baidu.com")
+                        .navigation();
+            }
+        });
+        //测试通过url跳转
+        findViewById(R.id.navByurl).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build("/test/webactivity")
+                        .withString("url","file:///android_asset/scheme_test.html")
                         .navigation();
             }
         });

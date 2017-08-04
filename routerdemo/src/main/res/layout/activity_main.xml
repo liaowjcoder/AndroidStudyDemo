@@ -30,6 +30,11 @@
         android:text="查找fragment"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/normalNavigationWithParams"
+        android:layout_width="match_parent"
+        android:text="应用内携带参数跳转"
+        android:layout_height="wrap_content" />
+    <Button
         android:id="@+id/destroy"
         android:layout_width="match_parent"
         android:text="关闭ARouter"

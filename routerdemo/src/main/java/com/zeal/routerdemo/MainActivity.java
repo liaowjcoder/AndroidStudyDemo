@@ -1,6 +1,7 @@
 package com.zeal.routerdemo;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -67,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "找到fragment："+fragment.toString(), Toast.LENGTH_SHORT).show();
 
                 }
+            }
+        });
+        //测试应用内携带参数跳转 它会查找 /test/activity02 对应的activity
+        findViewById(R.id.normalNavigationWithParams).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri testUriMix = Uri.parse("http://abc/test/activity02");
+                ARouter.getInstance().build(testUriMix)
+                        .withString("key","values")
+                        .navigation();
             }
         });
     }

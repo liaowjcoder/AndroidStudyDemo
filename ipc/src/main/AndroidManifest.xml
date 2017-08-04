@@ -83,10 +83,6 @@
             android:permission="com.zeal.ipc.Provider"
             android:process=":remote" />
 
-        <service
-            android:name="com.zeal.ipc13.TCPServerService"
-            android:enabled="true"
-            android:exported="true"></service>
     </application>
 
 </manifest>

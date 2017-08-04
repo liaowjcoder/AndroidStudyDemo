@@ -1,16 +1,9 @@
 package com.zeal.androidstudydemo;
 
-import android.os.Looper;
-import android.os.SystemClock;
+import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -23,23 +16,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Toast toast = Toast.makeText(this, "线程A", Toast.LENGTH_SHORT);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Looper.prepare();
-                for (int i = 0; i < 500; i++) {
-                    //toast.setText("线程A：--" + i);toast.show();
-                    //Log.e("zeal",i+"current timeA:"+ System.currentTimeMillis());
-                    Toast.makeText(MainActivity.this, "线程A： " + i, Toast.LENGTH_SHORT).show();
-                    //Log.e("zeal",i+"current timeB:"+ System.currentTimeMillis());
-//                    toast.show();
-                    //这段代码的执行是异步的。
-                }
-                Looper.loop();
-            }
-        }).start();
+        //int CPU_COUNT = Runtime.getRuntime().availableProcessors();
+        //System.out.println("CPU_COUNT:" + CPU_COUNT);//4
+
+        //final Toast toast = Toast.makeText(this, "线程A", Toast.LENGTH_SHORT);
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Looper.prepare();
+//                for (int i = 0; i < 500; i++) {
+//                    //toast.setText("线程A：--" + i);toast.show();
+//                    //Log.e("zeal",i+"current timeA:"+ System.currentTimeMillis());
+//                    Toast.makeText(MainActivity.this, "线程A： " + i, Toast.LENGTH_SHORT).show();
+//                    //Log.e("zeal",i+"current timeB:"+ System.currentTimeMillis());
+////                    toast.show();
+//                    //这段代码的执行是异步的。
+//                }
+//                Looper.loop();
+//            }
+//        }).start();
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -50,16 +47,16 @@ public class MainActivity extends AppCompatActivity {
 //                Looper.loop();
 //            }
 //        }).start();
-        for (int i = 0; i < 500; i++) {
-            Toast.makeText(MainActivity.this, "Main线程： " + i, Toast.LENGTH_SHORT).show();
-        }
-        show(MainActivity.LENGTH_LONG);
-
-        imageview = (ImageView) findViewById(R.id.imageview);
-
-        Glide.with(this).load(R.mipmap.loading)
-
-                .into(imageview);
+//        for (int i = 0; i < 500; i++) {
+//            Toast.makeText(MainActivity.this, "Main线程： " + i, Toast.LENGTH_SHORT).show();
+//        }
+//        show(MainActivity.LENGTH_LONG);
+//
+//        imageview = (ImageView) findViewById(R.id.imageview);
+//
+//        Glide.with(this).load(R.mipmap.loading)
+//
+//                .into(imageview);
 
         //Toast.makeText(this, "taost message", 0).show();
     }

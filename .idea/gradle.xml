@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/ipc" />
             <option value="$PROJECT_DIR$/memoryoptimization" />
             <option value="$PROJECT_DIR$/okhttpdemo" />
+            <option value="$PROJECT_DIR$/routerdemo" />
             <option value="$PROJECT_DIR$/threaddemo" />
           </set>
         </option>

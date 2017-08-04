@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/ipc/ipc.iml" filepath="$PROJECT_DIR$/ipc/ipc.iml" />
       <module fileurl="file://$PROJECT_DIR$/memoryoptimization/memoryoptimization.iml" filepath="$PROJECT_DIR$/memoryoptimization/memoryoptimization.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" filepath="$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/routerdemo/routerdemo.iml" filepath="$PROJECT_DIR$/routerdemo/routerdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/threaddemo/threaddemo.iml" filepath="$PROJECT_DIR$/threaddemo/threaddemo.iml" />
     </modules>
   </component>

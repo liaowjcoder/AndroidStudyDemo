@@ -40,6 +40,11 @@
         android:text="通过url跳转"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/interceptor"
+        android:layout_width="match_parent"
+        android:text="拦截测试"
+        android:layout_height="wrap_content" />
+    <Button
         android:id="@+id/destroy"
         android:layout_width="match_parent"
         android:text="关闭ARouter"

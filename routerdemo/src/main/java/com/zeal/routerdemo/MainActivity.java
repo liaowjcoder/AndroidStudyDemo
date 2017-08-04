@@ -15,9 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static MainActivity activity;
 
-    public static MainActivity getThis(){
+    public static MainActivity getThis() {
         return activity;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
                 //跳转操作-携带参数的
                 //with携带参数类型：跟startActivity可以携带的参数类型差不多
                 Bundle bundle = new Bundle();
-                bundle.putString("bundleStr","i am bundle data");
+                bundle.putString("bundleStr", "i am bundle data");
                 ARouter.getInstance().build("/test/activity")
-                        .withString("name","zeal")
-                        .withInt("age",25)
-                        .withBundle("bundle",bundle)
+                        .withString("name", "zeal")
+                        .withInt("age", 25)
+                        .withBundle("bundle", bundle)
                         .navigation();
 
             }
@@ -58,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ARouter.getInstance().build("/test/activity01")
-                        .withString("name","zeal")
-                        .navigation(MainActivity.this,66);
+                        .withString("name", "zeal")
+                        .navigation(MainActivity.this, 66);
             }
         });
         //测试查找fragment
@@ -69,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment = (Fragment) ARouter.getInstance().build("/test/fragment")
                         .navigation();
 
-                if(fragment!=null) {
-                    Toast.makeText(MainActivity.this, "找到fragment："+fragment.toString(), Toast.LENGTH_SHORT).show();
+                if (fragment != null) {
+                    Toast.makeText(MainActivity.this, "找到fragment：" + fragment.toString(), Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Uri testUriMix = Uri.parse("http://abc/test/activity02");
                 ARouter.getInstance().build(testUriMix)
-                        .withString("key","values")
+                        .withString("key", "values")
                         .navigation();
             }
         });
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 ARouter.getInstance().build("/test/webactivity")
-                        .withString("url","http://www.baidu.com")
+                        .withString("url", "http://www.baidu.com")
                         .navigation();
             }
         });
@@ -100,7 +101,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ARouter.getInstance().build("/test/webactivity")
-                        .withString("url","file:///android_asset/scheme_test.html")
+                        .withString("url", "file:///android_asset/scheme_test.html")
+                        .navigation();
+            }
+        });
+        //测试拦截
+        findViewById(R.id.interceptor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build("/test/activity04")
+                        //测试是否会被覆盖
+                        .withString("extra", "我没有被拦截 bbshow")
                         .navigation();
             }
         });
@@ -110,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==66) {
-            Log.e("zeal","在 onActivityResult 拿到resultCode="+resultCode);
+        if (requestCode == 66) {
+            Log.e("zeal", "在 onActivityResult 拿到resultCode=" + resultCode);
         }
     }
 }

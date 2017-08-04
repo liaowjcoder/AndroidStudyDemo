@@ -23,6 +23,7 @@
         <activity android:name=".TestActivity01" />
         <activity android:name=".TestActivity02" />
         <activity android:name=".TestActivity03" />
+        <activity android:name=".TestActivity04" />
         <activity android:name=".WebActivity" />
         <activity android:name=".SchemeActivity">
             <intent-filter>

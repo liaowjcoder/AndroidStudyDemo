@@ -80,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
                         .navigation();
             }
         });
+        //测试通过url跳转
+        findViewById(R.id.navByurl).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ARouter.getInstance().build("/test/webactivity")
+                        .withString("url","http://www.baidu.com")
+                        .navigation();
+            }
+        });
     }
 
     @Override

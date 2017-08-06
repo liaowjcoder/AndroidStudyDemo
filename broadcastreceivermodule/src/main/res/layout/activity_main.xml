@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zeal.broadcastreceivermodule.broadcast02.MainActivity">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:text="接收广播信息"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="跳转到第二个activity"
+        android:layout_width="match_parent"
+        android:onClick="start2Activity"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

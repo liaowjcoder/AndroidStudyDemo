@@ -10,14 +10,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/annotationandreflect" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/asynctaskdemo" />
-            <option value="$PROJECT_DIR$/classloaderdemo" />
             <option value="$PROJECT_DIR$/imagemodule" />
-            <option value="$PROJECT_DIR$/iocdemo" />
             <option value="$PROJECT_DIR$/ipc" />
-            <option value="$PROJECT_DIR$/memoryoptimization" />
             <option value="$PROJECT_DIR$/okhttpdemo" />
-            <option value="$PROJECT_DIR$/routerdemo" />
             <option value="$PROJECT_DIR$/threaddemo" />
           </set>
         </option>

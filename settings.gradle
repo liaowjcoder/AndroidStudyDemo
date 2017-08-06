@@ -1,1 +1,1 @@
-include ':app', ':okhttpdemo', ':threaddemo', ':ipc', ':annotationandreflect', ':imagemodule', ':asynctaskdemo', ':classloaderdemo', ':memoryoptimization', ':iocdemo', ':routerdemo'
+include ':app', ':okhttpdemo', ':threaddemo', ':ipc', ':annotationandreflect', ':imagemodule'

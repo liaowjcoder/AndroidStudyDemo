@@ -5,14 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidStudyDemo.iml" filepath="$PROJECT_DIR$/AndroidStudyDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotationandreflect/annotationandreflect.iml" filepath="$PROJECT_DIR$/annotationandreflect/annotationandreflect.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/asynctaskdemo/asynctaskdemo.iml" filepath="$PROJECT_DIR$/asynctaskdemo/asynctaskdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classloaderdemo/classloaderdemo.iml" filepath="$PROJECT_DIR$/classloaderdemo/classloaderdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/imagemodule/imagemodule.iml" filepath="$PROJECT_DIR$/imagemodule/imagemodule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/iocdemo/iocdemo.iml" filepath="$PROJECT_DIR$/iocdemo/iocdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ipc/ipc.iml" filepath="$PROJECT_DIR$/ipc/ipc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/memoryoptimization/memoryoptimization.iml" filepath="$PROJECT_DIR$/memoryoptimization/memoryoptimization.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" filepath="$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/routerdemo/routerdemo.iml" filepath="$PROJECT_DIR$/routerdemo/routerdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/threaddemo/threaddemo.iml" filepath="$PROJECT_DIR$/threaddemo/threaddemo.iml" />
     </modules>
   </component>

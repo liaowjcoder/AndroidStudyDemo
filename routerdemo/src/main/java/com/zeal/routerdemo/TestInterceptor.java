@@ -44,7 +44,9 @@ public class TestInterceptor implements IInterceptor {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     postcard.withString("extra", "我被拦截了，，，我是在拦截器中附加的参数");
-                    callback.onContinue(postcard);
+
+                    callback.onInterrupt(new RuntimeException());
+                    //callback.onContinue(postcard);
                 }
             });
 

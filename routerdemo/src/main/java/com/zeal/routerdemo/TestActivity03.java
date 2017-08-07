@@ -24,7 +24,6 @@ public class TestActivity03 extends AppCompatActivity {
     int age;
 //    static int age;
 //    private int age;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

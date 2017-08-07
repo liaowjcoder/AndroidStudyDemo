@@ -4,8 +4,11 @@ import java.util.Observable;
 
 /**
  * Created by zeal on 2017/8/7.
+ *
+ * 继承至系统自带的Observable
+ * 在Observable内部存储Observer的数据结构是Vector类型的，这是了为了线程安全而考虑的
+ * 不过可以使用CopyOnWriteArrayList来替代
  */
-//继承至系统自带的Observable
 public class TargetObservable extends Observable {
 
 

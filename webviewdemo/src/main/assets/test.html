@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function changeColor (color) {
+           document.body.style.backgroundColor = color;
+        }
+
+    </script>
+</head>
+
+<body>
+
+<h1>我是webview展示的内容</h1>
+<!--注意这里是onclick不是href-->
+<a onclick="callback.callNativeMethod(11,10,'cc',true)">h5调用客户端方法</a>
+</br>
+<!--页面分发器-->
+<a onclick="callback.goToAnyWhere('com.zeal.webviewdemo.MainActivity2,iOS.MovieDetailViewController:movieId=(int)123&email=lwj_zeal@163.com')">页面分发器</a>
+</body>
+</html>

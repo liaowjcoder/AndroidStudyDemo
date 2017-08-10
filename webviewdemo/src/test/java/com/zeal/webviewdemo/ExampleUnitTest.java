@@ -1,4 +1,4 @@
-package com.zeal.webviewmodule;
+package com.zeal.webviewdemo;
 
 import org.junit.Test;
 

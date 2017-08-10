@@ -19,4 +19,9 @@
         android:onClick="onclick"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/kill"
+        android:text="kill"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -32,7 +32,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.ipc12.ProviderActivity">
+        <activity android:name="com.zeal.ipc.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,10 +40,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.zeal.ipc6.Main2Activity"
+            android:name="com.zeal.ipc.Main2Activity"
             android:process=":remote" />
         <activity
-            android:name="com.zeal.ipc3.Main3Activity"
+            android:name="com.zeal.ipc.Main3Activity"
             android:process="com.zeal.ipc.remote" />
 
         <!-- 远程服务 -->

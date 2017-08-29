@@ -41,10 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
         final GridLayoutManager grid = new GridLayoutManager(this,2);
 
+        //重要代码
         grid.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
                 if(position==0) {
+                    //当处于第一个时就显示一整行：返回的个数就是现实的该item占据的列数
                     return grid.getSpanCount();
                 }
                 return 1;

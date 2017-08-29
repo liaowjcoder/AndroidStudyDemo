@@ -1,0 +1,30 @@
+git终端：git base
+
+git init 初始化一个 git 仓库，会在该文件夹下创建一个 .git 的隐藏文件。
+
+git status 查看当前分支的状态
+
+git add 文件名称.后缀  git add hello.txt
+
+git commit -m "提交日志"
+
+git branch 查看当前分支，默认在 master 分支
+
+git branch 分支名称  新建一个分支
+
+git checkout 分支名称
+    在切换分支后，输入 git branch 后前面有 *分支就是当前分支
+
+
+git checkout -b 分支名称 新建分支，并将切换到该分支上
+
+
+git tag 查看分支
+
+git tag v1.0 在当前分支上建立一个 tag 名字叫做 v1.0
+
+git merge 分支名称
+
+git branch -d branch_name 删除某一分支，不过要先切换到 marster 分支上，如果没有将该分支上的代码
+merge 到 master 分支上的话，那么它会提示需要使用 git branch -D branch_name 这样即使没有将代码
+merge 到 master 分支上，也会将其进行删除

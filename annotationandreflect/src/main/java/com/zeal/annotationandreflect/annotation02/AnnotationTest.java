@@ -12,6 +12,7 @@ public @interface AnnotationTest {
 
 
 
+    //这个value方法在被使用不需要指定value名字
     String value();
 //    String name() ;
 }

@@ -8,6 +8,6 @@ import java.lang.annotation.RetentionPolicy;
  * 定义一个注解，注解的信息会在运行时保留
  */
 
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface Target {
 }

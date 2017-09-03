@@ -16,10 +16,14 @@ public @interface AnnotationFile {
 
     String getNickName();
 
+    //StringBuilder get();
+
     int[] getArray() default {1,2,3,4};
 
     //Annotation
     //当 AnnotationTest 有一个属性叫做 value; 那么就不用写属性名称
     AnnotationTest annotation() default @AnnotationTest("AnnotationTest");
+
+    //枚举类型
 
 }

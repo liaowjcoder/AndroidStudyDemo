@@ -6,6 +6,9 @@ import java.util.HashSet;
  * Created by zeal on 2017/9/2.
  */
 /*
+注解就是给 java 代码加上一个标识规则，javac编译器在编译时就会去检测使用了该注解类的类是否符合标识规则，
+从而提示程序员该使用了注解类的类的相关功能。
+
 liaoweijiandeMacBook-Pro:annotation zeal$ javac AnnotationTest.java
 注: AnnotationTest.java使用或覆盖了已过时的 API。
 注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zeal.memoryoptimization3_viewstub.Main4Activity">
+        <activity android:name="com.zeal.memoryoptimization3_merge.Main5Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

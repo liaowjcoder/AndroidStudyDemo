@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:layout_width="fill_parent"--><!--android:layout_height="fill_parent">-->
+<!--如果activity的根部是使用framelayout的话，可以使用merge替换到外层的framelayout
+因为系统的content就是framelayout布局的，因此我们就不必要在根据中再使用framlayout了
+
+工具：sdk/tools/hierachyviewer
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wo shi text" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wo shi button" />
+
+</merge><!--</FrameLayout>-->

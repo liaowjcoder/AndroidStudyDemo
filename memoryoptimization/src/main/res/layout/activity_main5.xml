@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--根布局不是framelayout的情况-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--如果我们的merge_layout内的子view想要的跟布局是linealayout，而刚好外界
+    也是linearlayout布局，那么就可以使用merge标签省去这个引入布局的的linearlayout
+    -->
+    <include layout="@layout/merge_layout"/>
+</LinearLayout>

@@ -20,9 +20,13 @@ public class Main4Activity extends AppCompatActivity {
 
         if(new Random().nextInt()%2==0) {
             ViewStub textViewStub= (ViewStub) findViewById(R.id.viewstub_textview);
+            
+            //当ViewStub被inflate之后，textViewStub就被置位null
             textViewStub.inflate();
 
-
+            //当调用infalte之后，ViewStub会将它的parent赋值它包裹的view作为父布局，让将自己从该父布局中移除
+            //多次调用，会报"ViewStub must have a non-null ViewGroup viewParent"
+//            textViewStub.inflate();
             TextView text = (TextView) findViewById(R.id.text);
 
             text.setText("i am text");

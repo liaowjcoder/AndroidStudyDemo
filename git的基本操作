@@ -7,6 +7,7 @@ git status 查看当前分支的状态
 git add 文件名称.后缀  git add hello.txt
 
 git commit -m "提交日志"
+git commit -m "提交日志" 指定路径的文件...(可以是多个文件)
 
 git branch 查看当前分支，默认在 master 分支
 
@@ -28,3 +29,28 @@ git merge 分支名称
 git branch -d branch_name 删除某一分支，不过要先切换到 marster 分支上，如果没有将该分支上的代码
 merge 到 master 分支上的话，那么它会提示需要使用 git branch -D branch_name 这样即使没有将代码
 merge 到 master 分支上，也会将其进行删除
+
+
+
+git rm --cached<file>... 表示将 add 之后放在暂存区的文件取消，也就是这些文件的状态会变为未add状态
+
+get checkout --<file> 放弃对工作区的修改
+
+git reset HEAD <file>... 放弃将暂存区的修改
+
+git reset --hard commit_id 回退版本到指定的comit_id下
+
+git reflog 查看命令历史
+
+git diff HEAD -- file_name 表示标记该文件在暂存区和工作区的区别
+
+rm file_name 表示删除文件
+
+运行 rm file_name 之后，工作区的该文件被移除了，版本库中还有这个文件
+
+    如果真的要将版本库的文件也删除
+        git rm file_name
+        git commit ...
+    如果是误将文件删除，那么
+        git checkout -- file_name 将版本库中的该文件替换成工作区的文件
+

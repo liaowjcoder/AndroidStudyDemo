@@ -3,7 +3,6 @@ package com.zeal.annotationdemo.annotation05;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +35,5 @@ public class MyActivity extends AppCompatActivity {
     @OnClick({R.id.btn1,R.id.btn2})
     public void click(View view) {
         Toast.makeText(this, "view text:"+view.toString(), Toast.LENGTH_SHORT).show();
-        Log.e("zeal","view text:"+view.toString());
     }
 }

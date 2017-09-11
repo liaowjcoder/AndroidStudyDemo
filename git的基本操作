@@ -24,6 +24,10 @@ git tag 查看分支
 
 git tag v1.0 在当前分支上建立一个 tag 名字叫做 v1.0
 
+git checkout tag_name
+
+
+
 git merge 分支名称
 
 git branch -d branch_name 删除某一分支，不过要先切换到 marster 分支上，如果没有将该分支上的代码
@@ -35,6 +39,8 @@ merge 到 master 分支上，也会将其进行删除
 git rm --cached<file>... 表示将 add 之后放在暂存区的文件取消，也就是这些文件的状态会变为未add状态
 
 get checkout --<file> 放弃对工作区的修改
+
+git checkout filename 如果当前文件还没有添加到暂存区，并且不想要此次的修改，可以使用该命令就可以将文件内容进行恢复。
 
 git reset HEAD <file>... 放弃将暂存区的修改
 
@@ -53,4 +59,67 @@ rm file_name 表示删除文件
         git commit ...
     如果是误将文件删除，那么
         git checkout -- file_name 将版本库中的该文件替换成工作区的文件
+
+
+ssh-keygen -t ras “email”
+
+
+将本地仓库和远程仓库进行关联
+git remote add origin git@github.com:帐号名/远程的git仓库名称.git
+
+将本地仓库的所有内容推送给远程库
+git push -u origin master 实际上就是把本地的master分支推送到远程
+因为远程仓库的是空，使用 -u 就可以将本地的 master分支和远程库的 master 分支进行关联，并且将本地的 master 分支的内容 push 到远程分支的 master 上。
+
+git push orgin master 提交代码
+
+git pull origin master 拉取 master 的代码
+
+从远程库克隆
+git clone xxx.git 
+
+ssh 是不需要口令，https需要口令，并且速度慢
+
+
+git remote -v 查看当前项目有哪些远程仓库
+
+mac 是默认安装了 ssh
+shif + command + g  ~/.ssh 就可以进入到 .ssh 文件夹了，里面有公钥和私钥
+
+
+查看公钥内容的命令：
+cd ~/.ssh
+cat id_rsa.pub
+
+
+git config -global user.name “github的名称”
+git confit -global user.email “email”
+
+
+
+alias别名的配置
+
+git  commit —> git cm
+git log -> git lg
+git status -> git st
+git checkout -> git co
+git branch -> git br
+
+git config —-global alias.co checkout
+git config —-global alias.lg log
+git config —-global alias.cm commit
+git config —-global alias.st status
+git config —-global alias.br branch
+
+
+git config -l列举出所有的confi配置
+
+
+git diff commitId1 commitId2 比较两次提交的区别
+git diff branch1，branch2
+git diff —staged 比较暂存区和版本库的区别
+
+
+
+
 

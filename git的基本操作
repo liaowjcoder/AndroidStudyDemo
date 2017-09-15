@@ -54,3 +54,5 @@ rm file_name 表示删除文件
     如果是误将文件删除，那么
         git checkout -- file_name 将版本库中的该文件替换成工作区的文件
 
+git remote 查看远程的仓库
+git remote -v 查看远程仓库的信息

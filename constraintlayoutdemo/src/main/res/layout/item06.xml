@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--layout_goneMarginXXX-->
+    <!--相对布局的两个控件，其中一方法Visibility = GONE 时
+    另一方会根据layout_goneMargin 系列属性的值重新规划自己的
+    间距，比较常用于相对布局中保持各个控件的位置
+
+    当tv_a控件的visibility=gone时，tv_b不会发生会根据layout_
+    goneMarginLeft 重新规划自己的左间距
+    -->
+
+    <TextView
+        android:id="@+id/tv_a"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tv_b"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toRightOf="@id/tv_a"
+        app:layout_goneMarginLeft="100dp" />
+</android.support.constraint.ConstraintLayout>

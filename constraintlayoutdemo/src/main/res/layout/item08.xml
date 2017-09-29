@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--chain-->
+    <!--两个以上的布局在水平方向上或者竖直方向上相互依赖的情况-->
+    <!--chain style
+    方式1：
+    spread:除了当前chain中的控件大小分配之后，他们的margin间距会平分剩余空间大小
+    app:layout_constraintHorizontal_weight="0.33" 平分三个控件
+    方式2：
+    spread:除了当前chain中的控件大小分配之后，他们的margin间距会平分剩余空间大小
+    app:layout_constraintHorizontal_weight="0.33" 平分三个控件
+    btn1：layout_width = "wrap_content" 那么就会优先以包裹内容的方式先布局btn1，然后剩余的
+    让其他两个控件平分
+    方式3：
+    spread:除了当前chain中的控件大小分配之后，他们的margin间距会平分剩余空间大小
+    app:layout_constraintHorizontal_weight="0.33" 平分三个控件
+    给btn2设置左右margin=10dp这个margin值是计算在该btn2控件分配的大小内的，也
+    就是说btn1和btn3不会因为btn2设置了margin而压缩其大小
+    -->
+
+
+    <!--来源于QQ音乐技术团队：博客
+    性能测试结果：onMeasue和onLayout上的性能开销提升了40%
+    -->
+    <Button
+        android:id="@+id/btn1"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="01"
+        app:layout_constraintHorizontal_weight="0.33"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn2" />
+
+    <Button
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        app:layout_constraintHorizontal_weight="0.33"
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="02"
+        app:layout_constraintLeft_toRightOf="@id/btn1"
+        app:layout_constraintRight_toLeftOf="@+id/btn3" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="0.33"
+        android:layout_height="50dp"
+        android:text="03"
+        app:layout_constraintLeft_toRightOf="@id/btn2"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

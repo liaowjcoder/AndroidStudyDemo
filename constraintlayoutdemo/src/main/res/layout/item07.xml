@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--chain-->
+    <!--两个以上的布局在水平方向上或者竖直方向上相互依赖的情况-->
+    <!--chain style
+    spread:除了当前chain中的控件大小分配之后，他们的margin间距会平分剩余空间大小
+    spread_inside：除了当前chain中的控件大小分配之后，头尾控件不会分配间距，中间剩余控件分配间距给其他控件
+    packed:除了当前chain中的控件大小分配之后,头尾控件间距平分剩余空间
+
+    -->
+
+    <Button
+        android:id="@+id/btn1"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="02"
+        app:layout_constraintLeft_toRightOf="@id/btn1"
+        app:layout_constraintRight_toLeftOf="@+id/btn3" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="03"
+        app:layout_constraintLeft_toRightOf="@id/btn2"
+        app:layout_constraintRight_toLeftOf="@+id/btn4" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="04"
+        app:layout_constraintLeft_toRightOf="@id/btn3"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

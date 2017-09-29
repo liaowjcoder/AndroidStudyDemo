@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zeal.constraintlayoutdemo.MainActivity">
+
+    <!--button2会在button1的右边，并且button2会在剩余的宽度中居中对齐
+    原因：button2可以认为是左对齐于button1，右对齐于parent，因此它的两
+    侧都会产生同样的拉力，迫使button2居中布局
+
+    这里假设将button2的layout_width 设置为0dp的话，那么剩余空间就被button2
+    充满
+
+    -->
+    <Button
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:text="button1"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/tv2"
+        android:text="button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv1"
+        app:layout_constraintLeft_toRightOf="@id/tv1"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
